@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>heic2.tools — Free HEIC to JPG/PNG/WebP Converter (No Upload)</title>
+  <meta name="description" content="Convert HEIC/HEIF photos to JPG, PNG, or WebP entirely in your browser. No upload, no sign-up, no watermark. 100% private and free." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">H→J</span>
+        <span class="brand-name">heic2<span class="brand-dot">.</span>tools</span>
+      </div>
+      <nav class="header-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="https://github.com/heic2tools/heic2-tools" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <h1>Convert HEIC to JPG, PNG, or WebP<br />— right in your browser.</h1>
+      <p class="hero-sub">
+        No uploads. No accounts. No watermarks. Your photos never leave your device.
+      </p>
+
+      <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Upload HEIC files">
+        <div class="drop-zone-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="drop-zone-text">Drag &amp; drop HEIC files here, or click to browse</p>
+        <p class="drop-zone-hint">Supports batch conversion · Max 20 files at once</p>
+        <input type="file" id="file-input" accept=".heic,.heif" multiple hidden />
+      </div>
+
+      <div class="format-select" role="group" aria-label="Output format">
+        <span class="format-label">Convert to:</span>
+        <button class="format-btn is-active" data-format="jpeg">JPG</button>
+        <button class="format-btn" data-format="png">PNG</button>
+        <button class="format-btn" data-format="webp">WebP</button>
+      </div>
+    </section>
+
+    <section id="results" class="results wrap" hidden>
+      <div class="results-header">
+        <h2>Converted files</h2>
+        <button id="download-all" class="btn-primary">Download all (.zip)</button>
+      </div>
+      <ul id="results-list" class="results-list"></ul>
+    </section>
+
+    <section id="how-it-works" class="how wrap">
+      <h2>How it works</h2>
+      <ol class="how-steps">
+        <li>
+          <span class="how-step-num">01</span>
+          <div>
+            <h3>Select your HEIC files</h3>
+            <p>Drag and drop, or click to browse. Batch conversion is supported.</p>
+          </div>
+        </li>
+        <li>
+          <span class="how-step-num">02</span>
+          <div>
+            <h3>Pick an output format</h3>
+            <p>JPG for compatibility, PNG for transparency, WebP for smaller size.</p>
+          </div>
+        </li>
+        <li>
+          <span class="how-step-num">03</span>
+          <div>
+            <h3>Download instantly</h3>
+            <p>Everything runs locally in your browser using JavaScript — nothing is ever uploaded to a server.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="privacy wrap">
+      <h2>Privacy by design</h2>
+      <p>
+        Most online converters upload your photos to a server to process them. heic2.tools doesn't.
+        Conversion happens entirely in your browser's memory using the
+        <a href="https://github.com/alexcorvi/heic2any" target="_blank" rel="noopener">heic2any</a>
+        library — your files are never transmitted anywhere.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>heic2.tools — free, private, open source. <a href="https://github.com/heic2tools/heic2-tools" target="_blank" rel="noopener">View source on GitHub</a>.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.1/index.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
